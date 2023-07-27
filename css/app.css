@@ -1,3 +1,137 @@
+body {
+    margin: 0 auto;
+    max-width: 90%;
+    text-align: center;
+    padding-top: 300px;
+  }
 h1 {
     color: blueviolet;
+    font-size: 5em;
+    grid-area: nav;
+}
+h2 {
+    font-size: 3em;
+}
+p {
+    font-size: 2em;
+    margin: 20px;
+    text-align: justify;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+    background-color:azure;
+    position: fixed;
+    top:0;
+    width:90%;
+
+}
+nav ul li {
+    display: inline;
+    padding: 30px;
+    font-size: 2em;
+}
+
+a:hover {
+    color: blueviolet;
+}
+
+footer {
+    grid-area: ft;
+}
+img {
+display: inline;
+width: 10%;
+height: 10%;
+}
+section.active-class {
+    background-color: lightblue;
+}
+/* class selector*/
+.container {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 0.5fr; */
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas:
+    "nav nav nav nav"
+    "s1 s1 s1 i1"
+    "i2 s2 s2 s2"
+    "s3 s3 s3 i3"
+    "i4 s4 s4 s4"
+    "ft ft ft ft";
+    text-align: center;
+    gap: 2em;
+  }
+  .photo {
+    background-size: cover;
+    background-position: center;
+    border-radius: 10%;
+  }
+/* ID selectors */
+#Smoothie {
+    grid-area: s1;
+}
+#img1 {
+    grid-area: i1;
+    background-image: url("https://images.unsplash.com/photo-1592452319703-9a68b88dd26b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c21vb3RoaWV8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=800&q=60");    
+}
+
+#img2 {
+    grid-area: i2;
+    background-image: url("https://images.unsplash.com/photo-1614707585284-9cb9fc018387?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8anVpY2V8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=800&q=60");
+}
+#img3 {
+    grid-area: i3;
+    background-image: url("https://images.unsplash.com/photo-1623855244183-52fd8d3ce2f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njd8fHNhbGFkfGVufDB8fDB8fHwy&auto=format&fit=crop&w=800&q=60");
+}
+#img4 {
+    grid-area: i4;
+    background-image: url("https://images.unsplash.com/photo-1565848920056-906a21da8c70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGFjYWl8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=800&q=60");
+}
+#Juice {
+    grid-area: s2;
+}
+#Salad {
+    grid-area: s3;
+}
+#Acai-Bowl {
+    grid-area: s4;
+}
+@media only screen and (max-width: 480px) {
+    .container {
+        grid-template-columns: 250px;
+        grid-auto-rows: minmax(300px, auto);
+        grid-template-areas:
+        "nav"
+        "s1"
+        "i1"
+        "s2"
+        "i2"
+        "s3"
+        "i3"
+        "s4"
+        "i4"
+        "ft";
+      }
+}
+@media only screen and (max-width: 1120px) {
+    .container {
+        grid-template-columns: 700px;
+        grid-auto-rows: minmax(500px, auto);
+        grid-template-areas:
+        "nav"
+        "s1"
+        "i1"
+        "s2"
+        "i2"
+        "s3"
+        "i3"
+        "s4"
+        "i4"
+        "ft";
+      }
 }
